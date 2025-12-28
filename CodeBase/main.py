@@ -1,6 +1,5 @@
 # main.py
 from .navigation_system import NavigationSystem
-from .Benchmark.comparator import Comparator
 import json
 
 def main():
@@ -14,6 +13,9 @@ def main():
         system.run()
 
     elif mode == "bench":
+        # Import Comparator only in bench mode to avoid importing plotter.py
+        # which would set matplotlib backend to non-interactive
+        from .Benchmark.comparator import Comparator
         print("\n=== Running Benchmark Mode ===")
         robot_r = cfg.get("robot_radius", 1.0)
         motion  = cfg.get("motion", "8n")

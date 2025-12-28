@@ -5,7 +5,20 @@ from typing import List, Dict
 
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')  # Use non-interactive backend
+# Only set Agg backend if not already set to an interactive backend
+# This allows GUI to work in navigation mode while benchmarks use non-interactive backend
+try:
+    current_backend = matplotlib.get_backend().lower()
+    if current_backend not in ['agg', 'pdf', 'svg', 'ps']:
+        # Backend is interactive (e.g., 'TkAgg', 'Qt5Agg'), don't force change
+        # This allows visualizer.py to work in navigation mode
+        pass
+    else:
+        # Already non-interactive, or can set it
+        matplotlib.use('Agg', force=False)
+except:
+    # Backend already set or can't be changed, continue
+    pass
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap, BoundaryNorm
 
