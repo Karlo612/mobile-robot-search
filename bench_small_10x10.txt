@@ -1,0 +1,22 @@
+
+=== Running Benchmark Mode ===
+
+=== Running benchmark on Small 10x10 ===
+  Generated valid grid (attempt 1)
+  -> A* Graph (averaging over 5 runs)
+  -> A* Tree (averaging over 5 runs)
+  -> BFS Graph (averaging over 5 runs)
+  -> BFS Tree (averaging over 5 runs)
+  -> DFS Graph (averaging over 5 runs)
+  -> DFS Tree (averaging over 5 runs)
+      (max_expansions cap: 20,000)
+
+====== Benchmark Results ======
+Test                 Planner                   Runtime (s)     Expansions   Path Len     Memory (KB) 
+--------------------------------------------------------------------------------------------------------------
+Small 10x10          A* Graph                  0.0001          N/A          2            2.1         
+Small 10x10          A* Tree                   0.0001          N/A          2            1.6         
+Small 10x10          BFS Graph                 0.0000          1            2            2.2         
+Small 10x10          BFS Tree                  0.0000          2            2            2.1         
+Small 10x10          DFS Graph                 0.0000          2            2            0.9         
+Small 10x10          DFS Tree                  0.0000          2            2            0.9         

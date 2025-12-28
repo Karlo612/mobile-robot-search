@@ -1,0 +1,13 @@
+{
+  "map_file": "Data/maps/map16x22.xlsx",
+  "resolution": 1.0,
+  "origin": [0, 0],
+  "robot_radius": 2,
+  "start_grid": [2, 3],
+  "goal_grid": [13, 18],
+  "motion": "8n",
+  "planner": "dfs",
+  "visualize_search": false,
+  "use_tree_search": true,
+  "mode": "bench"
+}
